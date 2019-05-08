@@ -1,0 +1,58 @@
+"""
+>>> from Model.set_up_diagram import SetUp
+>>> SetUp().full_class_dict == {}
+True
+>>> SetUp().relationship_list == []
+True
+>>> SetUp().attribute_list == []
+True
+>>> SetUp().method_list == []
+True
+>>> SetUp().final_uml_list == []
+True
+>>> SetUp().overall_content == []
+True
+
+>>> from Model.class_name import ClassName
+>>> ClassName.set_up_class_name('DiagramModel')
+'DiagramModel'
+>>> ClassName.set_up_class_name('TestModel')
+'TestModel'
+
+>>> from Model.attributes import Attribute
+>>> Attribute.error_check_attribute('String data_name:')
+'data_name: str'
+>>> Attribute.error_check_attribute('List id_number:')
+'id_number: list'
+>>> Attribute.error_check_attribute('int count_students:')
+'count_students: int'
+>>> Attribute.attribute_clean('Stringdata_name:')
+'data_name: str'
+
+>>> from Model.method import Method
+>>> Method.error_check_method('String name')
+' name'
+
+>>> from Model.relationships import Relationships
+>>> Relationships.error_check_relationship('test_model: TestModel')
+'test_model: TestModel'
+
+>>> from Model.format_data import FormatData
+>>> FormatData.reverse_words('too word')
+'word too'
+>>> FormatData.clear_up_data('String')
+'str '
+>>> FormatData.clear_up_data('int')
+'int '
+>>> FormatData.clear_up_data('Float')
+'float '
+>>> FormatData.clear_up_data('Boolean')
+'bool '
+>>> FormatData.clear_up_data('List')
+'list '
+>>> FormatData.clear_up_data('Tuple')
+'tuple '
+>>> FormatData.clear_up_data('Dict')
+'dict '
+
+"""
