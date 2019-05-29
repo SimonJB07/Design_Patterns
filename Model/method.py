@@ -3,6 +3,16 @@ from Model.format_data import FormatData
 
 
 class Method:
+    def __init__(self):
+        self.__met = None
+
+    @property
+    def method(self):
+        return self.__met
+
+    @method.setter
+    def method(self, method):
+        self.__met = method
 
     @staticmethod
     def error_check_method(method_name):

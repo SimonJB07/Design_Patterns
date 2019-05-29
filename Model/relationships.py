@@ -3,6 +3,16 @@ from Model.format_data import FormatData
 
 
 class Relationships:
+    def __init__(self):
+        self.__rel = None
+
+    @property
+    def relationship(self):
+        return self.__rel
+
+    @relationship.setter
+    def relationship(self, relationship):
+        self.__rel = relationship
 
     @staticmethod
     def error_check_relationship(relationship_value):

@@ -3,6 +3,16 @@ from Model.format_data import FormatData
 
 
 class Attribute:
+    def __init__(self):
+        self.__att = None
+
+    @property
+    def attribute(self):
+        return self.__att
+
+    @attribute.setter
+    def attribute(self, attribute):
+        self.__att = attribute
 
     @staticmethod
     def error_check_attribute(attribute_name):
