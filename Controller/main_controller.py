@@ -1,13 +1,8 @@
-from View.file_reader import FileReader
-from View.file_writer import FileWriter
+from Model.director import Director
 from View.view_file_location import ViewFileLocation
-from Tests.main_test_file import MainTests
-from Model.set_up_diagram import SetUp
-from Model.class_name import ClassName
-from Model.relationships import Relationships
-from Model.attributes import Attribute
-from Model.method import Method
+# from Tests.main_test_file import MainTests
 from Model.validate_data import ValidateData
+from Model.python_file_reader import BuilderPythonDiagramFileReader
 
 
 class MainController:
@@ -15,60 +10,37 @@ class MainController:
     @staticmethod
     def main():
         try:
-            MainController.read_data()
-            MainController.get_doctest()
-            MainController.get_unittest()
+            # MainController.read_data()
+            # MainController.get_doctest()
+            # MainController.get_unittest()
+            python_diagram = BuilderPythonDiagramFileReader()
+            dirt = Director()
+            dirt.set_builder(python_diagram)
+            python = dirt.contuctor()
+            python.specification()
         except Exception as e:
-            print("MAIN ERROR: main.py error")
-            print(e)
+                print("MAIN ERROR: python or director")
+                print(e)
 
 
     @staticmethod
     def read_data():
-        FileReader.file_reader(ViewFileLocation().input_location())
-
-    @staticmethod
-    def write_name(data):
-        return FileWriter.file_writer(data)
-
-    @staticmethod
-    def pickle_write_call():
-        import pickle
-        with open('data.pickle', 'wb') as f:
-            pickle.dump(SetUp().final_uml_list, f)
-        with open('data.pickle', 'rb') as f:
-            data = pickle.load(f)
-            print(data)
+        BuilderPythonDiagramFileReader.file_reader(BuilderPythonDiagramFileReader(), ViewFileLocation().input_location())
 
     @staticmethod
     def get_unittest():
-        return MainTests.unit_test()
+        pass
+        # return MainTests.unit_test()
 
     @staticmethod
     def get_doctest():
-        return MainTests.doc_tests()
-
-    @staticmethod
-    def class_print(value, output_file):
-        ClassName.class_print(value, output_file)
-
-    @staticmethod
-    def relationship_print(value, output):
-        Relationships.relationship_print(value, output)
-
-    @staticmethod
-    def attribute_print(value, output):
-        Attribute.attribute_print(value, output)
-
-    @staticmethod
-    def methods_print(value, output):
-        Method.methods_print(value, output)
+        pass
+        # return MainTests.doc_tests()
 
     @staticmethod
     def pass_set_up(output):
-        SetUp.set_over_string(SetUp(), output)
+        pass# SetUpDiagram.set_over_string(SetUpDiagram(), output)
 
     @staticmethod
     def pass_validate_data(output):
         return ValidateData.validate_test_loader(output)
-
