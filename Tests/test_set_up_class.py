@@ -1,6 +1,4 @@
 import unittest
-from Model.set_up_diagram import SetUp
-
 
 class TestSetUp(unittest.TestCase):
     """unit test that cover some part of the program

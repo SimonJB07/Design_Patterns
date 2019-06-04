@@ -31,7 +31,7 @@ class FormatData:
                 word = re.findall('[A-Z][^A-Z]*', word)
                 add_line = word[0] + "_" + word[1]
                 lower_case = add_line.lower()
-                string_all = lower_case + ': ' + add_line.replace("_", '')
+                string_all = lower_case  + ': ' + add_line.replace("_", '')
                 return string_all
 
     @staticmethod

@@ -5,8 +5,7 @@ from Controller.main_error_checker import ErrorChecker
 class FileWriter:
     """The class's docstring"""
 
-    @staticmethod
-    def file_writer(overall_content):
+    def file_writer(self, overall_content):
         """this writes to a file using dict as kes
         and having the values as the print outs
         the loop steps though each key in dict
@@ -31,3 +30,6 @@ class FileWriter:
                         MainController.attribute_print(v, output_file)
                     elif 'methods_key' in k:
                         MainController.methods_print(v, output_file)
+
+
+
