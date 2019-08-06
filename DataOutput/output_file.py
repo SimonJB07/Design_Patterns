@@ -1,11 +1,10 @@
-
-class DiagramModel:
-    def __inti__(self):
-        self.test_model: TestModel
+class DiagramModel(object):
+    def __init__(self):
+        self.diagram_model: TestModel
         self.data_name: str
         self.id_number: list
         self.count_students: int
-        
+
     @staticmethod
     def get_id():
         pass
@@ -19,12 +18,12 @@ class DiagramModel:
         pass
 
 
-class TestModel:
-    def __inti__(self):
-        self.data_name: str
+class TestModel(object):
+    def __init__(self):
+        self.data_students_name: str
         self.last_name_student: list
-        self.count_students: dict
-        
+        self.count_student: dict
+
     @staticmethod
     def get_last_name():
         pass
