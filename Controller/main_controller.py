@@ -13,7 +13,6 @@ class MainController:
 
             # MainController.get_doctest()
             # MainController.get_unittest()
-            print("fucking work")
             python_diagram = BuilderPythonDiagramFileReader()
             dirt = Director()
             dirt.set_builder(python_diagram)
