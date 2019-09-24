@@ -10,9 +10,9 @@ class DiagramModel {
     void set_number_student()
 }
 class TestModel {
-    String data_name :
+    String data_students_name :
     List last_name_student :
-    Dict count_students :
+    Dict count_student :
     get_last_name()
     void get_count_students( String name )
 }
