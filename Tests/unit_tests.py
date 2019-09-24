@@ -1,5 +1,6 @@
 import unittest
 
+from Model.concrete_python import BuilderDiagramPython
 from Model.format_data import FormatData
 from View.view_file_location import ViewFileLocation
 
@@ -11,7 +12,7 @@ class TestSetUp(unittest.TestCase):
 
     def test_check_relationship(self):
         print('Test 1')
-        result = BuilderPythonDiagram.error_check_relationship('DiagramModel--TestModel')
+        result = BuilderDiagramPython.set_relationship(BuilderDiagramPython(), 'DiagramModel--TestModel', None)
         self.assertEqual(result, 'test_model: TestModel')
 
     def test_check_string(self):
@@ -24,29 +25,29 @@ class TestSetUp(unittest.TestCase):
         result = FormatData.reverse_words('DiagramModel Good')
         self.assertEqual(result, 'Good DiagramModel')
 
-    def test_set_up_attribute_name(self):
+    def test_set_attribute(self):
         print('Test 4')
-        result = BuilderPythonDiagram.error_check_attribute('int count_students:')
+        result = BuilderDiagramPython.set_attributes('int count_students:')
         self.assertEqual(result, 'count_students: int')
 
-    def test_set_up_method_name(self):
+    def test_set_methods(self):
         print('Test 5')
-        result = BuilderPythonDiagram.error_check_method('void get_name( String name )')
+        result = BuilderDiagramPython.set_methods('void get_name( String name )')
         self.assertEqual(result, ' get_name(  name )')
 
-    def test_set_up_method_name_two(self):
+    def test_set_method_two(self):
         print('Test 6')
-        result = BuilderPythonDiagram.error_check_method('void set_number_student()')
+        result = BuilderDiagramPython.set_methods('void set_number_student()')
         self.assertEqual(result, ' set_number_student()')
 
-    def test_set_up_class_name(self):
+    def test_set_class(self):
         print('Test 7')
-        result = BuilderPythonDiagram.set_up_class_name('classDiagramModel{')
+        result = BuilderDiagramPython.set_class('classDiagramModel{')
         self.assertEqual(result, 'DiagramModel')
 
-    def test_set_up_attribute_clean_up(self):
+    def test_set_attribute_clean_up(self):
         print('Test 8')
-        result = BuilderPythonDiagram.attribute_clean("Stringdata_name:")
+        result = BuilderDiagramPython.attribute_clean("Stringdata_name:")
         self.assertEqual(result, "data_name: str")
 
     def test_location_input(self):

@@ -1,4 +1,4 @@
-from Controller.main_error_checker import ErrorChecker
+from Model.error_checker import ErrorChecker
 from Model.replace_value import Replace
 
 import re
@@ -27,12 +27,12 @@ class FormatData:
     @staticmethod
     def format_relationship(data):
         for word in data.split():
-            str = data.replace(" ", "").replace(word, "")
+            word_str = data.replace(" ", "").replace(word, "")
             if ':' not in word:
                 word = re.findall('[A-Z][^A-Z]*', word)
                 add_line = word[0] + "_" + word[1]
                 lower_case = add_line.lower()
-                string_all = lower_case + ': ' + str.replace("_", '')
+                string_all = lower_case + ': ' + word_str.replace("_", '')
                 return string_all
 
     @staticmethod

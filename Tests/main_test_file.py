@@ -35,5 +35,3 @@ class MainTests:
             COV.erase()
             return 0
         return 1
-
-

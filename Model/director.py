@@ -1,17 +1,18 @@
-from Controller.main_error_checker import ErrorChecker
-from View.view_file_location import ViewFileLocation
+from Model.abstract_builder import Builder
+from Model.error_checker import ErrorChecker
 
 
+# Director
 class Director(object):
-    def __init__(self, d):
-        self.__bid = d
+
+    def __init__(self):
+        self.__bid = Builder()
 
     def set_builder(self, diagram):
         self.__bid = diagram
 
-    def file_reader(self, input_file_name):
+    def construct(self, input_file_name):
         ErrorChecker.error_type(str, input_file_name, "FILE NAME DON\'T LOAD: data type is not corrected")
-        ErrorChecker.error_name(ViewFileLocation.input_location(), input_file_name, "ERROR: INPUT FILE IS NOT FIND")
         counter = 0
         with open(input_file_name, 'r') as diagram_file:
             for line in diagram_file:
